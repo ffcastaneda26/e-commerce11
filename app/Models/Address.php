@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Address extends Model
 {
@@ -22,14 +23,23 @@ class Address extends Model
         'zip_code'
     ];
 
+    public function getFullNameAttribute()
+    {
+        return $this->first_name .' ' . $this->last_name;
+
+    }
     public function order(): BelongsTo
     {
         return $this->belogsTo(Order::class);
     }
-    
-    public function getFullNameAtribute()
+
+    public function address(): HasOne
     {
-        return "{$this->first_name} {$this->last_name}";
+        return $this->hasOne(Order::class);
     }
+
+
+
+
 
 }
