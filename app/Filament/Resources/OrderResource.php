@@ -224,8 +224,6 @@ class OrderResource extends Resource
                 TextColumn::make('payment_status')->searchable()->sortable()->translateLabel()->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('currency')->searchable()->sortable()->translateLabel()->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make(name: 'shipping_method')->searchable()->sortable()->translateLabel()->toggleable(isToggledHiddenByDefault: true),
-
-
                 TextColumn::make('grand_total')
                     		->translateLabel()
                     		->alignment(Alignment::End)

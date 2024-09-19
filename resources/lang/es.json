@@ -1,5 +1,6 @@
 {
     "View": "Ver",
+    "Latest Orders":"Últimas Órdenes",
     "News": "Nuevos",
     "All": "Todos",
     "Average Price": "Importe Promedio",
@@ -54,7 +55,7 @@
     "Is active": "¿Activo(a)?",
     "Categories": "Categorías",
     "Category": "Categoría",
-    "Products": "Prodductos",
+    "Products": "Productos",
     "Product": "Producto",
     "Product Info": "Información del Producto",
     "Description": "Descripción",

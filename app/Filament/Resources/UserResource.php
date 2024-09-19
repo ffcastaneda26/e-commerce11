@@ -21,11 +21,14 @@ use Filament\Pages\Page;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
-
+    protected static ?string $recordTitleAttribute = 'name';
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
     protected static ?int $navigationSort = 1;
-
+    public static function getGloballySearchableAttributes(): array
+    {
+            return ['name', 'email'];
+    }
     // protected static ?string $cluster = Security::class;
     public static function getNavigationLabel(): string
     {

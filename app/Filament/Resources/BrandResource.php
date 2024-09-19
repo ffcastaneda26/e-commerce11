@@ -26,7 +26,7 @@ use App\Filament\Resources\BrandResource\RelationManagers;
 class BrandResource extends Resource
 {
     protected static ?string $model = Brand::class;
-
+    protected static ?string $recordTitleAttribute = 'name';
     protected static ?string $navigationIcon = 'heroicon-o-wallet';
     protected static ?string $activeNavigationIcon = 'heroicon-s-shield-check';
     protected static ?int $navigationSort = 2;

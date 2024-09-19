@@ -79,11 +79,6 @@ class OrdersRelationManager extends RelationManager
                     ->color('info')
                     ->icon('heroicon-o-eye'),
                 Tables\Actions\DeleteAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
             ]);
     }
 }
