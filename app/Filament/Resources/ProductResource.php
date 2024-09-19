@@ -10,24 +10,25 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
+use Filament\Tables\Filters\Filter;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
+use Filament\Support\Enums\Alignment;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Checkbox;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Columns\ToggleColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\ProductResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductResource\RelationManagers;
-use Filament\Forms\Components\Checkbox;
-use Filament\Support\Enums\Alignment;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
-use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Filters\TernaryFilter;
 
 class ProductResource extends Resource
 {
@@ -151,10 +152,15 @@ class ProductResource extends Resource
                 TextColumn::make('price')->searchable()->sortable()->translateLabel()
                     ->alignment(Alignment::End)
                     ->numeric(decimalPlaces: 2, decimalSeparator: '.' , thousandsSeparator: ','),
-                IconColumn::make('in_stock')->translateLabel()->boolean()->alignCenter(),
-                IconColumn::make('is_featured')->translateLabel()->boolean()->alignCenter()->toggleable(isToggledHiddenByDefault: false),
-                IconColumn::make('on_sale')->translateLabel()->boolean()->alignCenter()->toggleable(isToggledHiddenByDefault: false),
-                IconColumn::make('is_active')->translateLabel()->boolean()->alignCenter(),
+                ToggleColumn::make('in_stock')->translateLabel()->alignCenter()->toggleable(isToggledHiddenByDefault: false),
+                ToggleColumn::make('is_featured')->translateLabel()->toggleable(isToggledHiddenByDefault: false),
+                ToggleColumn::make('on_sale')->translateLabel()->toggleable(isToggledHiddenByDefault: false),
+                ToggleColumn::make('is_active')->translateLabel()->toggleable(isToggledHiddenByDefault: false),
+
+                // IconColumn::make('in_stock')->translateLabel()->boolean()->alignCenter(),
+                // IconColumn::make('is_featured')->translateLabel()->boolean()->alignCenter()->toggleable(isToggledHiddenByDefault: false),
+                // IconColumn::make('on_sale')->translateLabel()->boolean()->alignCenter()->toggleable(isToggledHiddenByDefault: false),
+                // IconColumn::make('is_active')->translateLabel()->boolean()->alignCenter(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime('d-M-Y')
                     ->sortable()

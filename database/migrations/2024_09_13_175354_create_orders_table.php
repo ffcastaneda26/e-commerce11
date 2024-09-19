@@ -17,7 +17,7 @@ return new class extends Migration
             $table->decimal('grand_total',10,2)->nullable()->comment('Total de la orden');
             $table->string('payment_method')->nullable()->comment('Forma de pago');
             $table->string('payment_status')->nullable()->comment('Estado del pago');
-            $table->enum('status',['new','processing','shippend','delivered','canceled'])->default('new')->coment('Estado de la orden');
+            $table->enum('status',['new','processing','Shipped','delivered','cancelled'])->default('new')->coment('Estado de la orden');
             $table->string('currency')->nullable()->comment('Moneda');
             $table->decimal('shipping_amount',10,2)->nullable()->comment('Cargo x Entrega');
             $table->string('shipping_method')->nullable()->comment('Forma de entrega');
