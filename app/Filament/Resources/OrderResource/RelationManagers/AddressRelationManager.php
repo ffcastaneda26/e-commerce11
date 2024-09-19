@@ -47,7 +47,7 @@ class AddressRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->heading(__('Address'))
+            ->heading(__('Addresses'))
             ->recordTitleAttribute(__('Address'))
             ->columns([
                 Tables\Columns\TextColumn::make('fullname')->translateLabel(),

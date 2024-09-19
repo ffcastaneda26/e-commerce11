@@ -30,4 +30,6 @@ class AppServiceProvider extends ServiceProvider
             ->offColor('danger');
         });
     }
+
+    
 }
