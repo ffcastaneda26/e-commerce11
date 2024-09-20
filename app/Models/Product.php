@@ -44,12 +44,12 @@ class Product extends Model
         return $this->hasMany(OrderItem::class);
     }
 
-    public function scopeisAFeatured($query)
+    public function scopeisActive($query)
     {
         $query->where('is_active',1);
     }
 
-    public function scopeisActive($query)
+    public function scopeisFeature($query)
     {
         $query->where('is_featured',1);
     }
