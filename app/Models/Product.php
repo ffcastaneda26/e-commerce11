@@ -44,4 +44,28 @@ class Product extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+    public function scopeisAFeatured($query)
+    {
+        $query->where('is_active',1);
+    }
+
+    public function scopeisActive($query)
+    {
+        $query->where('is_featured',1);
+    }
+
+    public function scopeinStock($query)
+    {
+        $query->where('in_stock',1);
+    }
+
+    public function scopeonSale($query)
+    {
+        $query->where('on_sale',1);
+    }
+
+    public function scopeSlug($query,$slug)
+    {
+        $query->where('slug',$slug);
+    }
 }

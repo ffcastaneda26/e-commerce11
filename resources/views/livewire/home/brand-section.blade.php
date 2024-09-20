@@ -20,10 +20,10 @@
     </div>
     <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-0">
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-2">
-            @foreach($brands as $brand )
+            @foreach($brands as $brand )Storage::url($brand->image)
                 <div class="bg-white rounded-lg shadow-md dark:bg-gray-800" wire:key={{ 'brand-'.$brand->id}}>
                     <a href="" class="">
-                        <img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}" class="object-cover w-auto h-auto rounded-t-lg">
+                        <img src="{{ }}" alt="{{ $brand->name }}" class="object-cover w-auto h-auto rounded-t-lg">
                     </a>
                     <div class="p-5 text-center">
                         <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">

@@ -170,7 +170,15 @@
     "Sign in here": "Ingrese desde aquí",
     "Forgot Password": "Clave Olvidada",
     "Remember your password?": "¿Recuerda su clave?",
-    "Reset password": "Restablecer Clave"
-
+    "Reset password": "Restablecer Clave",
+    "Add to Cart": "Agregar al Carrito",
+    "Sort by latest": "Los mas nuevos",
+    "Sort by Price": "Por precio",
+    "Product Status": "Estado del Producto",
+    "In Stock": "¿En Existencia?",
+    "On On Sal": "¿En Venta?",
+    "Product Detail": "Detalle del Producto",
+    "Quantity": "Cantidad",
+    "Free Shipping": "Envío Gratis"
 
 }

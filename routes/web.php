@@ -23,7 +23,7 @@ Route::get('/',HomePage::class)->name('home-page');
 Route::get('categories',CategoriesPage::class)->name('categories.index');
 Route::get('products',ProductsPage::class)->name('products.index');
 Route::get('cart',CartPage::class)->name('cart.index');
-Route::get('products/{product}',ProductDetailPage::class)->name('product-detail');
+Route::get('products/{slug}',ProductDetailPage::class)->name('product-detail');
 Route::get('checkout',CheckOutPage::class)->name('checkout');
 Route::get('my-orders',MyOrdersPage::class)->name('my-orders');
 Route::get('my-orders/{order}',MyOrderDetailPage::class)->name('my-orders.show');
