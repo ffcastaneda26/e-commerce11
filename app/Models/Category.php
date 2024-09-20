@@ -22,4 +22,9 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
+    public function scopeisActive($query)
+    {
+        $query->where('is_active',1);
+    }
+
 }

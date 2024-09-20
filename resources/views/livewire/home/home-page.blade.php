@@ -9,6 +9,6 @@
     @include('livewire.home.categories-section')
 
     {{-- Customer Review Section --}}
-    @include('livewire.home.customer-review-section')
+    {{-- @include('livewire.home.customer-review-section') --}}
 
 </div>
