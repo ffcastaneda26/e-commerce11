@@ -8,6 +8,6 @@ class ForgotPasswordPage extends Component
 {
     public function render()
     {
-        return view('livewire.auth.forgot-password-page');
+        return view('livewire.auth.forgot-password-page')->title(__('Forgot Password'));
     }
 }

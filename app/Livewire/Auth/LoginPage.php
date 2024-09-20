@@ -8,6 +8,6 @@ class LoginPage extends Component
 {
     public function render()
     {
-        return view('livewire.auth.login-page');
+        return view('livewire.auth.login-page')->title(__('Log In'));
     }
 }

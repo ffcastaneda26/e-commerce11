@@ -8,6 +8,6 @@ class RegisterPage extends Component
 {
     public function render()
     {
-        return view('livewire.auth.register-page');
+        return view('livewire.auth.register-page')->title(__('Register'));
     }
 }

@@ -76,13 +76,7 @@
     "Login to your Account": "Ingrese a su Cuenta",
     "Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.": "Sus datos personales se utilizarán para respaldar su experiencia en este sitio web, para administrar el acceso a su cuenta y para otros fines descritos en nuestra política de privacidad.",
     "Hello": "Hola",
-    "Email Address": "Correo Electrónico",
-    "No account yet?": "Aún no tiene cuenta?",
-    "Log In": "Ingresar",
-    "Login": "Ingresar",
-    "Create Account": "Crear Cuenta",
-    "My Account": "Mi Cuenta",
-    "Logout": "Salir",
+
     "Loading...": "Cargando...",
     "Update": "Actualizar",
     "Profile Information": "Información del Perfil",
@@ -156,6 +150,27 @@
     "Home Page": "Página Inicial",
     "See products from the most popular brands": "Vea los productos de las marcas mas populares",
     "Explore our products by category": "Explore nuestros productos por categoría",
-    "Browse": "Explorar"
+    "Browse": "Explorar",
+    "Email Address": "Correo Electrónico",
+    "No account yet?": "Aún no tiene cuenta?",
+    "Log In": "Ingresar",
+    "Login": "Ingresar",
+    "Create Account": "Crear Cuenta",
+    "My Account": "Mi Cuenta",
+    "Logout": "Salir",
+    "Email address": "Correo Electrónico",
+    "Don't have an account yet?": "¿Aún no tiene una cuenta?",
+    "Sign up here": "Regístrese aquí",
+    "Sign in": "Conectarse",
+    "Forgot password?": "¿Olvidó su clave?",
+    "8+ characters required": "Son requeridos al menos 8 carácteres",
+    "Sign up": "Registrarse",
+    " Already have an account?": "¿Ya tiene cuenta?",
+    "Please include a valid email address so we can get back to you": "Por favor incluya una dirección de correo electrónico válida para que podamos comunicarnos con usted.",
+    "Sign in here": "Ingrese desde aquí",
+    "Forgot Password": "Clave Olvidada",
+    "Remember your password?": "¿Recuerda su clave?",
+    "Reset password": "Restablecer Clave"
+
 
 }
