@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Helpers\CartManagement;
+use App\Livewire\Partials\Navbar;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
@@ -65,4 +67,18 @@ class ProductsPage extends Component
             'categories'=>Category::isActive()->get()
         ])->title(__('Products'));
     }
+
+    // Agregar producto al carrito
+    public function addToCart($product_id){
+        $total_count = CartManagement::addItemToCart($product_id);
+        $this->dispatch('update-cart-count',total_count:$total_count)->to(Navbar::Class);
+    }
+
+    public function removeCart(){
+        CartManagement::clearCartItems();
+        $this->dispatch('update-cart-count',total_count:0)->to(Navbar::Class);
+        // TODO:: Agregar el componente de mensajes
+    }
+
+
 }

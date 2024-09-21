@@ -183,6 +183,10 @@
     "On On Sal": "¿En Venta?",
     "Product Detail": "Detalle del Producto",
     "Quantity": "Cantidad",
-    "Free Shipping": "Envío Gratis"
+    "Free Shipping": "Envío Gratis",
+    "No products found": "No se encontraron productos",
+    "Adding...":"Agregando...",
+    "Increment Quantity": "Incrementar Cantidad",
+    "Decrement Quantity": "Decrementar Cantidad"
 
 }
