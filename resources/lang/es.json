@@ -185,8 +185,16 @@
     "Quantity": "Cantidad",
     "Free Shipping": "Envío Gratis",
     "No products found": "No se encontraron productos",
+    "No products in the cart": "No hay productos en el carrito",
     "Adding...":"Agregando...",
     "Increment Quantity": "Incrementar Cantidad",
-    "Decrement Quantity": "Decrementar Cantidad"
+    "Decrement Quantity": "Decrementar Cantidad",
+    "Shopping Cart":"Carrito de la compra",
+    "Remove": "Quitar",
+    "Summary":"Resumen",
+    "Taxes": "Impuestos",
+    "Shipping": "Envío",
+    "Checkout": "Pagar",
+    "Removing...": "Quitando..."
 
 }

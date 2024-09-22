@@ -22,7 +22,7 @@ Class CartManagement {
             $cart_items[$existing_item]['quantity']++;
             $cart_items[$existing_item]['total_amount']= $cart_items[$existing_item]['quantity'] *  $cart_items[$existing_item]['unit_amount'];
         }else{
-            $product = Product::where('id',6)->first(['id','name','price','images']);
+            $product = Product::where('id',$product_id)->first(['id','name','price','images']);
             if($product){
                 $cart_items[]=[
                     'product_id'    => $product_id,
@@ -74,8 +74,10 @@ Class CartManagement {
     // Incrementar Cantidad
     static public function incrementQuantityToCartItem($product_id){
         $cart_items = self::getCartItemsFromCookie();
+        $existing_item = null;
         foreach ($cart_items as $key => $item){
             if($item['product_id'] == $product_id){
+                $existing_item = $key;
                 $cart_items[$key]['quantity']++;
                 $cart_items[$key]['total_amount']= $cart_items[$key]['quantity'] *  $cart_items[$existing_item]['unit_amount'];
             }
@@ -87,8 +89,10 @@ Class CartManagement {
     // Decrementar Cantidad
     static public function decrementQuantityToCartItem($product_id){
         $cart_items = self::getCartItemsFromCookie();
+        $existing_item = null;
         foreach ($cart_items as $key => $item){
             if($item['product_id'] == $product_id){
+                $existing_item = $key;
                 if( $cart_items[$key]['quantity'] > 1){
                     $cart_items[$key]['quantity']--;
                     $cart_items[$key]['total_amount']= $cart_items[$key]['quantity'] *  $cart_items[$existing_item]['unit_amount'];
@@ -102,7 +106,8 @@ Class CartManagement {
 
     static public function calculateGrandTotal($items)
     {
-        return array_sum($items,'total_amount');
+        return array_sum(array_column($items,'total_amount'));
+
     }
 
     static public function addItemToCartWithQty($product_id,$qty=1){
@@ -120,7 +125,7 @@ Class CartManagement {
             $cart_items[$existing_item]['quantity'] = $qty;
             $cart_items[$existing_item]['total_amount']= $cart_items[$existing_item]['quantity'] *  $cart_items[$existing_item]['unit_amount'];
         }else{
-            $product = Product::where('id',6)->first(['id','name','price','images']);
+            $product = Product::where('id',$product_id)->first(['id','name','price','images']);
             if($product){
                 $cart_items[]=[
                     'product_id'    => $product_id,
