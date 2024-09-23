@@ -1,4 +1,6 @@
 {
+    "Something was wrong": "Algo salió mal",
+    "Invalid credentials": "Credenciales Inválidas",
     "Shipping Address": "Dirección de Entrega",
     "First Name": "Nombre",
     "Last Name": "Apellido",
@@ -180,6 +182,9 @@
     "Sign up here": "Regístrese aquí",
     "Sign in": "Conectarse",
     "Forgot password?": "¿Olvidó su clave?",
+    "Confirm Password Error": "La confirmación de la clave es errónea",
+    "Recover Password": "Recuperar Clave",
+    "Save password": "Guardar clave",
     "8+ characters required": "Son requeridos al menos 8 carácteres",
     "Sign up": "Registrarse",
     " Already have an account?": "¿Ya tiene cuenta?",
@@ -209,6 +214,11 @@
     "Taxes": "Impuestos",
     "Shipping": "Envío",
     "Checkout": "Pagar",
-    "Removing...": "Quitando..."
-
+    "Removing...": "Quitando...",
+    "Hello!": "Hola!",
+    "You are receiving this email because we received a password reset request for your account.": "Está recibiendo este correo electrónico porque recibimos una solicitud de restablecimiento de contraseña para su cuenta.",
+    "This password reset link will expire in 60 minutes.": "Este enlace para restablecer la contraseña caducará en 60 minutos.",
+    "If you did not request a password reset, no further action is required.": "Si no solicitó un restablecimiento de contraseña, no es necesario realizar ninguna otra acción.",
+    "Regards,": "Saludos,",
+    "Password reset link has been sent to your email address": "El enlace para restablecer la contraseña se ha enviado a su dirección de correo electrónico"
 }

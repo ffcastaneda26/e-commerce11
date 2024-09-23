@@ -28,10 +28,10 @@ Route::get('products/{slug}',ProductDetailPage::class)->name('product-detail');
 Route::get('login',LoginPage::class)->name('login');
 Route::get('register',RegisterPage::class)->name(name: 'register');
 Route::get('forgot',ForgotPasswordPage::class)->name(name: 'forgot_password');
-Route::get('reset',ResetPasswordPage::class)->name('reset_password');
-
+// Route::get('reset-password/{token}',ResetPasswordPage::class)->name('password.reset');
+Route::get('/reset-password/{token}', ResetPasswordPage::class)->middleware('guest')->name('password.reset');
 // Route::middleware(['guest'])->group(function () {
-   
+
 // });
 
 Route::middleware(['auth'])->group(function () {

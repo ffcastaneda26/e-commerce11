@@ -11,7 +11,7 @@ class LoginPage extends Component
 
     public function render()
     {
-        
+
         return view('livewire.auth.login-page')->title(__('Log In'));
     }
 
@@ -25,8 +25,6 @@ class LoginPage extends Component
         if(!auth()->attempt(['email' => $this->email,'password' => $this->password])){
             session()->flash('error',__('Invalid credentials'));
             return;
-        }else{
-            session()->flash('error','NI PASO POR EL ANTERIOR IF');
         }
 
         return redirect()->intended();

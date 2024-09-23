@@ -15,26 +15,35 @@
 
                     <hr class="my-5 border-slate-300">
                     @session('error')
-                        <div class="flex justify-center mb-4 font-medium text-2xl text-red-600">
+                        <div class="mt-2 bg-red-500  text-white rounded-lg p-4 text-center mb-4 text-2xl" role="alert" tabindex="-1" aria-labelledby="hs-solid-color-danger-label">
                             {{ $value }}
                         </div>
                     @endsession
-   
+                    @if ($errors->any())
+                        <div class=" text-start mt-2 bg-red-500  text-white rounded-lg p-4 mb-2" role="alert" tabindex="-1" aria-labelledby="hs-solid-color-danger-label">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                   <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <!-- Form -->
-                    <form wire:submit.prevent="save">  
+                    <form wire:submit.prevent="save">
                         <div class="grid gap-y-4">
                         <!-- Correo -->
                             <div>
                                 <label for="email" class="block text-sm mb-2 dark:text-white">{{ __('Email address') }}</label>
                                 <div class="relative">
-                                    <input type="text" id="email" 
+                                    <input type="text" id="email"
                                             name="email"
                                             value = "{{ old('email') }}"
-                                            wire:model="email" 
-                                            class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" 
+                                            wire:model="email"
+                                            class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                                             aria-describedby="email-error"
                                     >
-                                
+
                                     @error('email')
                                         <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
                                             <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
@@ -43,9 +52,9 @@
                                         </div>
                                     @enderror
                                 </div>
-                                @error('email')
+                                {{-- @error('email')
                                     <p class="text-xs text-red-600 mt-2">{{ $message }}</p>
-                                @enderror
+                                @enderror --}}
                             </div>
                             <!-- End Correo -->
 
@@ -64,10 +73,10 @@
                                         </div>
                                     @enderror
                                 </div>
-                                @error('password')
+                                {{-- @error('password')
                                     <p class="text-xs text-red-600 mt-2">{{  $message}}</p>
-                                @enderror
-                                <div class="flex justify-end items-center">
+                                @enderror --}}
+                                <div class="flex justify-end items-center mt-2 py-2">
                                     <a  href="{{ route('forgot_password') }}" wire_navigate class="text-sm text-blue-600 decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                         {{ __('Forgot password?') }}
                                     </a>
@@ -78,7 +87,7 @@
                                 {{ __('Sign in') }}
                             </button>
                         </div>
-                       
+
                     </form>
                     <!-- End Form -->
                 </div>
