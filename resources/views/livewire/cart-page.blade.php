@@ -72,7 +72,9 @@
                 <span class="font-semibold">Total</span>
                 <span class="font-bold underline border-b-2">${{ number_format($total_to_pay, 2, '.', ',') }}</span>
             </div>
-            <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">{{ __('Checkout') }}</button>
+                @if($cart_items)
+                    <a href="{{ route('checkout') }}" class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">{{ __('Checkout') }}</a>
+                @endif
             </div>
         </div>
         </div>
