@@ -25,14 +25,13 @@ Route::get('products',ProductsPage::class)->name('products.index');
 Route::get('cart',CartPage::class)->name('cart.index');
 Route::get('products/{slug}',ProductDetailPage::class)->name('product-detail');
 
-Route::get('login',LoginPage::class)->name('login');
-Route::get('register',RegisterPage::class)->name(name: 'register');
-Route::get('forgot',ForgotPasswordPage::class)->name(name: 'forgot_password');
-// Route::get('reset-password/{token}',ResetPasswordPage::class)->name('password.reset');
-Route::get('/reset-password/{token}', ResetPasswordPage::class)->middleware('guest')->name('password.reset');
-// Route::middleware(['guest'])->group(function () {
 
-// });
+Route::middleware(['guest'])->group(function () {
+    Route::get('login',LoginPage::class)->name('login');
+    Route::get('register',RegisterPage::class)->name(name: 'register');
+    Route::get('forgot',ForgotPasswordPage::class)->name(name: 'forgot_password');
+    Route::get('/reset-password/{token}', ResetPasswordPage::class)->name('password.reset');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout',function(){
