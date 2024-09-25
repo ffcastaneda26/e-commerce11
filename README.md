@@ -14,9 +14,6 @@ El canal <a href="https://www.youtube.com/@DCodeMania"> DCodeMania </a> cuenta c
 
 Es necesario instalar este paquete para los mensajes [Livewire Alert](https://github.com/jantinnerezo/livewire-alert).
 
-Para garantizar que la comunidad de Laravel sea acogedora para todos, revise y respete las [Reglas de Conducta](https://laravel.com/docs/contributions#code-of-conduct).
- 
-
 ## Alcance del proyecto
 
 El proyecto tiene dos áreas principales:
