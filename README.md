@@ -12,7 +12,9 @@ Este proyecto está realizado siguiente el curso de youtube: <a href="https://ww
 
 El canal <a href="https://www.youtube.com/@DCodeMania"> DCodeMania </a> cuenta con varios cursos de interés.
 
-
+Es necesario instalar este paquete para los mensajes: 
+[Livewire Alert]([https://laravel.com/docs/contributions#code-of-conduct](https://github.com/jantinnerezo/livewire-alert)).
+ 
 
 ## Alcance del proyecto
 
