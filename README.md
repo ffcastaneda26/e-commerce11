@@ -37,7 +37,7 @@ Desde la página de productos puede agregar al carrito y desde el mismo puede:
 
 Para poder procesar el pedido necesita estar registrado por lo que el sistema lo envía a la página de registro. 
 
-Una vez conectado puede procear el pedido, revisar sus pedidos, etc. 
+Una vez conectado puede procesar el pedido, revisar sus pedidos, etc. 
 
 
 ## Mejoras del pryecto
