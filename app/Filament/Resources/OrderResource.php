@@ -201,7 +201,8 @@ class OrderResource extends Resource
                                             $total += $repeater['total_amount'];
                                         }
                                         $set('grand_total',$total);
-                                        return Number::currency($total,$get('currency'));
+                                        // return Number::currency($total,$get('currency'));
+                                        return number_format($total,2);
 
                                     }),
                                 Hidden::make('grand_total')
