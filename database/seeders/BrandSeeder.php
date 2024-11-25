@@ -3,9 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Brand;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class BrandSeeder extends Seeder
 {
@@ -21,6 +22,7 @@ class BrandSeeder extends Seeder
             $name = 'Marca ' . $i;
             Brand::factory()->create([
                 'name'  => $name,
+                'slug'  => Str::slug($name),
                 'image' => $image,
             ]);
         }

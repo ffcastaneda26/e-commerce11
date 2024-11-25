@@ -20,12 +20,14 @@ class DatabaseSeeder extends Seeder
             'products',
             'categories',
             'brands',
-            // 'users',
+            'products',
+            'users',
         ]);
 
-        // $this->call(UsersSeeder::class);
+        $this->call(UsersSeeder::class);
         $this->call(BrandSeeder::class);
         $this->call(CategorySeeder::class);
+        $this->call(ProductSeeder::class);
     }
 
     protected function truncateTables(array $tables) {

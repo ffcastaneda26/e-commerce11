@@ -20,6 +20,7 @@ use Filament\Forms\Components\Checkbox;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\SelectFilter;
@@ -29,6 +30,7 @@ use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\ProductResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProductResource\RelationManagers;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class ProductResource extends Resource
 {
@@ -94,6 +96,11 @@ class ProductResource extends Resource
                                 ->directory('products')
                                 ->maxFiles(5)
                                 ->reorderable()
+                                ->avatar()
+                                ->getUploadedFileNameForStorageUsing(
+                                    fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                                        ->prepend('prod_'),
+                                )
                         ])
                     ])->columnSpan(2),
                 Group::make()->schema([
@@ -146,10 +153,12 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('images')
+                    ->circular()
+                    ->stacked(),
                 TextColumn::make('name')->searchable()->sortable()->translateLabel(),
                 TextColumn::make('category.name')->searchable()->sortable()->translateLabel(),
                 TextColumn::make('brand.name')->searchable()->sortable()->translateLabel(),
-                TextColumn::make('price')->searchable()->sortable()->translateLabel()->money('USD'),
                 TextColumn::make('price')->searchable()->sortable()->translateLabel()
                     ->alignment(Alignment::End)
                     ->numeric(decimalPlaces: 2, decimalSeparator: '.' , thousandsSeparator: ','),
@@ -236,5 +245,5 @@ class ProductResource extends Resource
         return ['name', 'slug', 'brand.name', 'category.name'];
     }
 
-    
+
 }
