@@ -73,7 +73,6 @@ class BrandResource extends Resource
                             ->required()
                             ->translateLabel()
                             ->maxLength(100)
-                            ->unique(Brand::class, 'name', ignoreRecord: true)
                             ->unique(ignoreRecord: true)
                             ->live(onBlur: true)
                             ->afterStateUpdated(fn($operation, Set $set, ?string $state) => $set('slug', $operation === 'create' ? Str::slug($state) : null)),
@@ -89,7 +88,7 @@ class BrandResource extends Resource
                     ->schema([
                         FileUpload::make('image')
                             ->translateLabel()
-                            ->directory('categories')
+                            ->directory('brands')
                             ->preserveFilenames()
                             ->image(),
                         Toggle::make('is_active')->required(),
@@ -109,19 +108,20 @@ class BrandResource extends Resource
                     ->translateLabel()
                     ->sortable()
                     ->searchable(),
+
                 ImageColumn::make('image'),
 
                 IconColumn::make('is_active')
                     ->translateLabel()
                     ->boolean(),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->dateTime('D m Y')
                     ->sortable()
                     ->translateLabel(),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->translateLabel()
+                // TextColumn::make('updated_at')
+                //     ->dateTime()
+                //     ->sortable()
+                //     ->translateLabel()
 
             ])
             ->filters([

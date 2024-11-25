@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\App;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Brand>
@@ -16,8 +18,11 @@ class BrandFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            //
+            return [
+            'name' => fake()->word(),
+            'slug'  => fake()->slug,
+            'image' => fake()->imageUrl,
+            'is_active' => fake()->boolean(),
         ];
     }
 }
