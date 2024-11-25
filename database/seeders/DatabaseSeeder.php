@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
             'products',
             'categories',
             'brands',
-            // 'users',
+            'users',
         ]);
 
-        // $this->call(UsersSeeder::class);
+        $this->call(UsersSeeder::class);
         $this->call(BrandSeeder::class);
     }
 
