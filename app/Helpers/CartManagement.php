@@ -34,7 +34,7 @@ Class CartManagement {
                 ];
             }
         }
-        self::addCartItemsToCooke($cart_items);
+        self::addCartItemsToCookie($cart_items);
         return count($cart_items);
     }
 
@@ -48,12 +48,12 @@ Class CartManagement {
             //     break;
             }
         }
-        self::addCartItemsToCooke($cart_items);
+        self::addCartItemsToCookie($cart_items);
         return $cart_items;
     }
 
     // Colocar carrito en la cookie
-    static public function addCartItemsToCooke($cart_items){
+    static public function addCartItemsToCookie($cart_items){
         Cookie::queue('cart_items',json_encode($cart_items),60*24*30); // 30 Días
     }
 
@@ -82,7 +82,7 @@ Class CartManagement {
                 $cart_items[$key]['total_amount']= $cart_items[$key]['quantity'] *  $cart_items[$existing_item]['unit_amount'];
             }
         }
-        self::addCartItemsToCooke($cart_items);
+        self::addCartItemsToCookie($cart_items);
         return $cart_items;
     }
 
@@ -99,7 +99,7 @@ Class CartManagement {
                 }
             }
         }
-        self::addCartItemsToCooke($cart_items);
+        self::addCartItemsToCookie($cart_items);
         return $cart_items;
     }
     // Calcular el gran total
@@ -137,7 +137,7 @@ Class CartManagement {
                 ];
             }
         }
-        self::addCartItemsToCooke($cart_items);
+        self::addCartItemsToCookie($cart_items);
         return count($cart_items);
     }
 
